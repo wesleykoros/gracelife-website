@@ -52,6 +52,7 @@ export default function DvaServicesPage() {
               "Wound care and dressing changes (as clinically required)",
               "Continence support and monitoring",
               "Chronic disease monitoring and wellbeing checks",
+              "Personal care",
               "Post-hospital support and care coordination",
             ].map((item) => (
               <li key={item} className="flex gap-2">

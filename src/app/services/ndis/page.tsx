@@ -50,6 +50,8 @@ export default function NdisServicesPage() {
               "Assistance with Daily Living (in-home supports)",
               "Personal care and routine support",
               "Community access and participation",
+              "Community nursing and high intensity care",
+              "SIL",
               "Support with life skills, routines, and independence",
               "Social support and connection",
               "Care coordination support (where applicable)",
