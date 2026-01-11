@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@theme {
+  --color-gracelife-purple: #C36AA8;
+  --color-gracelife-teal: #7FCACB;
+}
 
 :root {
   --background: #ffffff;

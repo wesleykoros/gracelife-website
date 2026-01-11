@@ -1,65 +1,122 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="space-y-16">
+      {/* HERO */}
+      <section className="space-y-6">
+        <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
+          Compassionate care,{" "}
+          <span className="text-gracelife-purple">delivered where you live.</span>
+        </h1>
+
+        <p className="max-w-2xl text-gray-700">
+          Gracelife Care Services provides dependable in-home support and community
+          health care tailored to DVA clients, NDIS participants, and older Australians.
+        </p>
+
+        <div className="flex flex-wrap gap-4">
+          <Link
+            href="/services"
+            className="rounded border border-gracelife-teal px-5 py-2 text-gracelife-teal transition-colors hover:bg-gracelife-teal hover:text-white"
+          >
+            View services
+          </Link>
+
+          <Link
+            href="/contact"
+            className="rounded bg-gracelife-purple px-5 py-2 text-white transition-colors hover:opacity-90"
+          >
+            Make an enquiry
+          </Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      </section>
+
+      {/* PROGRAMS (with images) */}
+      <section className="grid gap-6 md:grid-cols-3">
+        {[
+          {
+            title: "DVA",
+            image: "/home/home-care.jpg",
+            color: "text-gracelife-teal",
+            desc: "Veteran-focused support delivered with respect and coordination.",
+            href: "/services/dva",
+          },
+          {
+            title: "NDIS",
+            image: "/home/disability-support.jpg",
+            color: "text-gracelife-purple",
+            desc: "Participant-led supports aligned to goals and independence.",
+            href: "/services/ndis",
+          },
+          {
+            title: "Aged Care",
+            image: "/home/aged-care.jpg",
+            color: "text-gracelife-teal",
+            desc: "Helping older Australians remain safe and supported at home.",
+            href: "/services/aged-care",
+          },
+        ].map((item) => (
+          <Link
+            key={item.title}
+            href={item.href}
+            className="overflow-hidden rounded-lg border transition-shadow hover:shadow-sm"
           >
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src={item.image}
+              alt={`${item.title} support`}
+              width={600}
+              height={400}
+              className="h-44 w-full object-cover"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <div className="p-5">
+              <div className={`font-semibold ${item.color}`}>{item.title}</div>
+              <p className="mt-2 text-sm text-gray-700">{item.desc}</p>
+            </div>
+          </Link>
+        ))}
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="rounded-lg border border-gracelife-purple/30 bg-gracelife-purple/5 p-6">
+        <h2 className="text-xl font-semibold">What families say</h2>
+
+        <div className="mt-6 grid gap-6 md:grid-cols-3">
+          {[
+            "The care felt respectful and reliable. We finally felt supported.",
+            "Staff were professional, kind, and always on time.",
+            "Gracelife made navigating care much easier for our family.",
+          ].map((quote, i) => (
+            <div key={i} className="rounded-lg bg-white p-4 shadow-sm">
+              <p className="text-sm text-gray-700">“{quote}”</p>
+            </div>
+          ))}
         </div>
-      </main>
+      </section>
+
+      {/* CTA */}
+      <section className="rounded-lg border border-gracelife-teal/30 bg-gracelife-teal/5 p-6">
+        <h2 className="text-xl font-semibold">Need support at home?</h2>
+        <p className="mt-2 text-sm text-gray-700">
+          Speak with our team about DVA, NDIS, or Aged Care support options.
+        </p>
+        <div className="mt-4 flex flex-wrap gap-3">
+          <Link
+            href="/contact"
+            className="rounded bg-gracelife-purple px-5 py-2 text-white transition-colors hover:opacity-90"
+          >
+            Make an enquiry
+          </Link>
+          <Link
+            href="/services"
+            className="rounded border border-gracelife-teal px-5 py-2 text-gracelife-teal transition-colors hover:bg-gracelife-teal hover:text-white"
+          >
+            View services
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
+
