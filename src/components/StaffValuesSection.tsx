@@ -6,15 +6,17 @@ type StaffMember = {
   role: string;
   blurb: string;
   imageSrc: string;
+  objectPosition?: "object-left" | "object-center" | "object-right";
 };
 
-const staff = [
+const staff: StaffMember[] = [
   {
     name: "Our Clinical Team",
     role: "Registered Nurses & Community Clinicians",
     blurb:
       "Providing clinically informed care, oversight, and coordination to support safety and wellbeing at home.",
     imageSrc: "/team/staff-1.jpg",
+    objectPosition: "object-left",
   },
   {
     name: "Our Support Workers",
@@ -22,6 +24,7 @@ const staff = [
     blurb:
       "Delivering practical, person-centred support that aligns with goals, routines, and independence.",
     imageSrc: "/team/staff-2.jpg",
+    objectPosition: "object-center",
   },
   {
     name: "Our Care Coordination Team",
@@ -29,9 +32,9 @@ const staff = [
     blurb:
       "Ensuring smooth onboarding, clear communication, and reliable scheduling for clients and families.",
     imageSrc: "/team/staff-3.jpg",
+    objectPosition: "object-right",
   },
 ];
-
 
 const values = [
   {
@@ -109,7 +112,7 @@ export default function StaffValuesSection() {
                 src={m.imageSrc}
                 alt={`${m.name} — ${m.role}`}
                 fill
-                className="object-cover"
+                className={`object-cover ${m.objectPosition ?? "object-center"}`}
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
               {/* subtle overlay for consistency */}
@@ -153,3 +156,4 @@ export default function StaffValuesSection() {
     </section>
   );
 }
+
