@@ -16,7 +16,7 @@ export default function DvaServicesPage() {
 
         <p className="max-w-2xl text-gray-700">
           Gracelife Care Services supports eligible veterans and their families with
-          respectful, reliable care at home. We work with you and your health team
+          respectful, reliable care at home. We work with you and your treating team
           to help maintain independence, safety, and dignity.
         </p>
 
@@ -38,22 +38,22 @@ export default function DvaServicesPage() {
 
       {/* WHAT WE CAN HELP WITH */}
       <section className="grid gap-6 md:grid-cols-2">
-        <div className="rounded-lg border border-gray-200 p-6">
+        <div className="rounded-lg border border-gray-200 bg-white p-6">
           <h2 className="text-xl font-semibold">How we can help</h2>
           <p className="mt-2 text-sm text-gray-700">
-            Our team provides clinically informed, person-centred care designed to
-            support everyday living and reduce avoidable hospital visits.
+            We provide person-centred support at home, with clinically supported care
+            delivered in line with individual needs and clinical direction.
           </p>
 
           <ul className="mt-4 space-y-2 text-sm text-gray-700">
             {[
-              "Community nursing and clinical support at home",
-              "Medication support and prompts (as appropriate)",
-              "Wound care and dressing changes (as clinically required)",
+              "Community nursing and clinical support at home (as clinically required)",
+              "Medication support (reminders, prompts, and monitoring as appropriate)",
+              "Wound care and dressing changes (as directed)",
               "Continence support and monitoring",
-              "Chronic disease monitoring and wellbeing checks",
-              "Personal care",
-              "Post-hospital support and care coordination",
+              "Chronic disease monitoring and wellbeing checks (as appropriate)",
+              "Personal care and assistance with daily routines",
+              "Post-hospital follow-up and care coordination (where needed)",
             ].map((item) => (
               <li key={item} className="flex gap-2">
                 <span className="mt-[2px] text-gracelife-teal">•</span>
@@ -61,6 +61,14 @@ export default function DvaServicesPage() {
               </li>
             ))}
           </ul>
+
+          <div className="mt-5 rounded border border-gray-200 bg-gray-50 p-4">
+            <div className="text-sm font-semibold text-gray-900">Note</div>
+            <p className="mt-1 text-sm text-gray-700">
+              Services are confirmed during intake based on eligibility, clinical needs,
+              and service availability.
+            </p>
+          </div>
         </div>
 
         <div className="rounded-lg border border-gracelife-purple/30 bg-gracelife-purple/5 p-6">
@@ -70,7 +78,7 @@ export default function DvaServicesPage() {
             {[
               "Respectful, veteran-centred communication",
               "Reliable scheduling and clear coordination",
-              "Accurate documentation and progress updates",
+              "Accurate documentation and progress updates (as required)",
               "Privacy, dignity, and culturally safe care",
               "A consistent team wherever possible",
             ].map((item) => (
@@ -83,7 +91,7 @@ export default function DvaServicesPage() {
 
           <div className="mt-6 rounded border border-gracelife-purple/30 bg-white p-4">
             <div className="text-sm font-semibold text-gracelife-purple">
-              Suitable for:
+              Suitable for
             </div>
             <p className="mt-1 text-sm text-gray-700">
               Veterans and families seeking coordinated support at home, post-hospital
@@ -93,8 +101,8 @@ export default function DvaServicesPage() {
         </div>
       </section>
 
-      {/* SERVICE AREAS / DELIVERY */}
-      <section className="rounded-lg border border-gray-200 p-6">
+      {/* SERVICE DELIVERY */}
+      <section className="rounded-lg border border-gray-200 bg-white p-6">
         <h2 className="text-xl font-semibold">Service delivery</h2>
         <div className="mt-4 grid gap-6 md:grid-cols-3">
           <div>
@@ -122,7 +130,7 @@ export default function DvaServicesPage() {
               Documentation
             </div>
             <p className="mt-2 text-sm text-gray-700">
-              Clear notes and updates that support safe care delivery and communication
+              Clear notes and updates to support safe service delivery and communication
               with appropriate parties.
             </p>
           </div>
@@ -130,14 +138,14 @@ export default function DvaServicesPage() {
       </section>
 
       {/* FAQ */}
-      <section className="rounded-lg border border-gray-200 p-6">
+      <section className="rounded-lg border border-gray-200 bg-white p-6">
         <h2 className="text-xl font-semibold">Frequently asked questions</h2>
 
         <div className="mt-4 space-y-6">
           <div>
             <div className="font-medium">How do I start DVA services?</div>
             <p className="mt-2 text-sm text-gray-700">
-              Contact us and we’ll guide you through the intake process and the best
+              Contact us and we’ll guide you through intake and the most suitable
               pathway based on your needs.
             </p>
           </div>
@@ -145,7 +153,7 @@ export default function DvaServicesPage() {
           <div>
             <div className="font-medium">Do you support post-hospital care?</div>
             <p className="mt-2 text-sm text-gray-700">
-              Yes — we can assist with post-hospital support and help coordinate care
+              Yes — we can assist with post-hospital follow-up and help coordinate care
               where appropriate.
             </p>
           </div>
