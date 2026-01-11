@@ -1,5 +1,45 @@
 import Image from "next/image";
 import Link from "next/link";
+import StaffValuesSection from "@/components/StaffValuesSection";
+
+const programs = [
+  {
+    title: "DVA",
+    image: "/home/home-care.jpg",
+    color: "text-gracelife-teal",
+    desc: "Veteran-focused support delivered with respect and coordination.",
+    href: "/services/dva",
+  },
+  {
+    title: "NDIS",
+    image: "/home/disability-support.jpg",
+    color: "text-gracelife-purple",
+    desc: "Participant-led supports aligned to goals and independence.",
+    href: "/services/ndis",
+  },
+  {
+    title: "Aged Care",
+    image: "/home/aged-care.jpg",
+    color: "text-gracelife-teal",
+    desc: "Helping older Australians remain safe and supported at home.",
+    href: "/services/aged-care",
+  },
+] as const;
+
+const testimonials = [
+  {
+    id: "respectful-reliable",
+    quote: "The care felt respectful and reliable. We finally felt supported.",
+  },
+  {
+    id: "professional-kind",
+    quote: "Staff were professional, kind, and always on time.",
+  },
+  {
+    id: "navigating-care",
+    quote: "Gracelife made navigating care much easier for our family.",
+  },
+] as const;
 
 export default function Home() {
   return (
@@ -35,29 +75,7 @@ export default function Home() {
 
       {/* PROGRAMS (with images) */}
       <section className="grid gap-6 md:grid-cols-3">
-        {[
-          {
-            title: "DVA",
-            image: "/home/home-care.jpg",
-            color: "text-gracelife-teal",
-            desc: "Veteran-focused support delivered with respect and coordination.",
-            href: "/services/dva",
-          },
-          {
-            title: "NDIS",
-            image: "/home/disability-support.jpg",
-            color: "text-gracelife-purple",
-            desc: "Participant-led supports aligned to goals and independence.",
-            href: "/services/ndis",
-          },
-          {
-            title: "Aged Care",
-            image: "/home/aged-care.jpg",
-            color: "text-gracelife-teal",
-            desc: "Helping older Australians remain safe and supported at home.",
-            href: "/services/aged-care",
-          },
-        ].map((item) => (
+        {programs.map((item) => (
           <Link
             key={item.title}
             href={item.href}
@@ -69,6 +87,8 @@ export default function Home() {
               width={600}
               height={400}
               className="h-44 w-full object-cover"
+              sizes="(max-width: 768px) 100vw, 33vw"
+              priority={item.title === "DVA"} // only one priority image
             />
             <div className="p-5">
               <div className={`font-semibold ${item.color}`}>{item.title}</div>
@@ -78,18 +98,17 @@ export default function Home() {
         ))}
       </section>
 
+      {/* ✅ STAFF / VALUES */}
+      <StaffValuesSection />
+
       {/* TESTIMONIALS */}
       <section className="rounded-lg border border-gracelife-purple/30 bg-gracelife-purple/5 p-6">
         <h2 className="text-xl font-semibold">What families say</h2>
 
         <div className="mt-6 grid gap-6 md:grid-cols-3">
-          {[
-            "The care felt respectful and reliable. We finally felt supported.",
-            "Staff were professional, kind, and always on time.",
-            "Gracelife made navigating care much easier for our family.",
-          ].map((quote, i) => (
-            <div key={i} className="rounded-lg bg-white p-4 shadow-sm">
-              <p className="text-sm text-gray-700">“{quote}”</p>
+          {testimonials.map((t) => (
+            <div key={t.id} className="rounded-lg bg-white p-4 shadow-sm">
+              <p className="text-sm text-gray-700">“{t.quote}”</p>
             </div>
           ))}
         </div>
