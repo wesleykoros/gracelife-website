@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import ComplianceStrip from "@/components/ComplianceStrip";
 import StaffValuesSection from "@/components/StaffValuesSection";
 
 export const metadata: Metadata = {
@@ -79,6 +80,9 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      {/* ✅ COMPLIANCE STRIP */}
+      <ComplianceStrip />
 
       {/* PROGRAMS (with images) */}
       <section className="grid gap-6 md:grid-cols-3">
