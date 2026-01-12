@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
+export const metadata: Metadata = {
+  title: "Aged Care Support at Home",
+  description:
+    "Helping older Australians remain safe and independent at home with compassionate aged care support from Gracelife Care Services.",
+};
 export default function AgedCareServicesPage() {
   return (
     <div className="space-y-12">

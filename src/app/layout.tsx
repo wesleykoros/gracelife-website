@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -16,8 +13,54 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gracelife Care Services",
-  description: "Community health care services for DVA, NDIS and Aged Care.",
+  title: {
+    default: "Gracelife Care Services | DVA, NDIS & Aged Care Support",
+    template: "%s | Gracelife Care Services",
+  },
+  description:
+    "Gracelife Care Services provides compassionate in-home support and community health care for DVA clients, NDIS participants, and older Australians.",
+  keywords: [
+    "Gracelife Care Services",
+    "DVA community nursing",
+    "NDIS disability support",
+    "Aged care at home",
+    "In-home care Australia",
+    "Community nursing services",
+    "Disability support services",
+  ],
+  authors: [{ name: "Gracelife Care Services" }],
+  metadataBase: new URL("https://gracelifecareservices.com.au"),
+
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+
+  openGraph: {
+    title: "Gracelife Care Services",
+    description:
+      "Compassionate care, delivered where you live. DVA, NDIS & Aged Care support.",
+    url: "https://gracelifecareservices.com.au",
+    siteName: "Gracelife Care Services",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Gracelife Care Services – Compassionate care at home",
+      },
+    ],
+    locale: "en_AU",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Gracelife Care Services",
+    description:
+      "Compassionate care, delivered where you live. DVA, NDIS & Aged Care support.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
@@ -27,21 +70,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`
-    ${geistSans.variable} 
-    ${geistMono.variable} 
-    antialiased 
-    bg-gradient-to-b 
-    from-gracelife-teal/10 
-    via-white 
-    to-white
-  `}>
-        <Header />
-        <main className="mx-auto max-w-6xl px-4 py-10">{children}</main>
-        <Footer />
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-b from-gracelife-teal/10 via-white to-white`}
+      >
+        {children}
       </body>
     </html>
   );
 }
-
-

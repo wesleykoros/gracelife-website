@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import StaffValuesSection from "@/components/StaffValuesSection";
+
+export const metadata: Metadata = {
+  title: "Compassionate In-Home Care",
+  description:
+    "Trusted DVA, NDIS and Aged Care services delivered at home. Gracelife Care Services supports dignity, independence, and wellbeing.",
+};
 
 const programs = [
   {

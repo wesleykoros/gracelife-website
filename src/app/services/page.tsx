@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 
+export const metadata: Metadata = {
+  title: "Our Services",
+  description:
+    "Explore Gracelife Care Services including DVA community nursing, NDIS disability support, and Aged Care services delivered at home.",
+};
 const services = [
   {
     title: "DVA Community Nursing & Veteran Support",

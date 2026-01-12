@@ -1,7 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Terms of Use | Gracelife Care Services",
+export const metadata: Metadata = {
+  title: "Terms of Use",
+  description:
+    "Terms and conditions for using the Gracelife Care Services website and services.",
 };
 
 export default function TermsPage() {
@@ -17,7 +20,7 @@ export default function TermsPage() {
         </p>
       </header>
 
-      <section className="rounded-lg border border-gray-200 bg-white p-6 space-y-5">
+      <section className="space-y-5 rounded-lg border border-gray-200 bg-white p-6">
         <div>
           <h2 className="text-lg font-semibold">1. General information only</h2>
           <p className="mt-2 text-sm text-gray-700">
@@ -71,7 +74,10 @@ export default function TermsPage() {
           <h2 className="text-lg font-semibold">7. Contact</h2>
           <p className="mt-2 text-sm text-gray-700">
             If you have questions about these terms, please contact us via the{" "}
-            <Link href="/contact" className="text-gracelife-purple underline underline-offset-4">
+            <Link
+              href="/contact"
+              className="text-gracelife-purple underline underline-offset-4"
+            >
               Contact page
             </Link>
             .
@@ -85,3 +91,4 @@ export default function TermsPage() {
     </div>
   );
 }
+

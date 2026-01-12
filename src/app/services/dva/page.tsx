@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
+export const metadata: Metadata = {
+  title: "DVA Community Nursing & Veteran Support",
+  description:
+    "Respectful DVA community nursing and veteran support services delivered at home by Gracelife Care Services.",
+};
 export default function DvaServicesPage() {
   return (
     <div className="space-y-12">

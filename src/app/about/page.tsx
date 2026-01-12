@@ -1,8 +1,14 @@
 4
+import type { Metadata } from "next";
 import Image from "next/image";
 
 import Link from "next/link";
 
+export const metadata: Metadata = {
+  title: "About Us",
+  description:
+    "Learn about Gracelife Care Services, our people, values, and commitment to dignified DVA, NDIS, and Aged Care support.",
+};
 export default function AboutPage() {
   return (
     <div className="space-y-14">

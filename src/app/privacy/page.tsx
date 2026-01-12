@@ -1,7 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Privacy Policy | Gracelife Care Services",
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Read the Gracelife Care Services privacy policy outlining how we collect, use, and protect personal information.",
 };
 
 export default function PrivacyPage() {
@@ -17,7 +20,7 @@ export default function PrivacyPage() {
         </p>
       </header>
 
-      <section className="rounded-lg border border-gray-200 bg-white p-6 space-y-5">
+      <section className="space-y-5 rounded-lg border border-gray-200 bg-white p-6">
         <div>
           <h2 className="text-lg font-semibold">1. What we collect</h2>
           <p className="mt-2 text-sm text-gray-700">
@@ -35,11 +38,15 @@ export default function PrivacyPage() {
             </li>
             <li className="flex gap-2">
               <span className="mt-[2px] text-gracelife-purple">•</span>
-              <span>To coordinate services and communicate with you (or your nominated representative).</span>
+              <span>
+                To coordinate services and communicate with you (or your nominated representative).
+              </span>
             </li>
             <li className="flex gap-2">
               <span className="mt-[2px] text-gracelife-teal">•</span>
-              <span>To meet legal, regulatory, and quality/safety obligations (where applicable).</span>
+              <span>
+                To meet legal, regulatory, and quality/safety obligations (where applicable).
+              </span>
             </li>
           </ul>
         </div>
@@ -81,7 +88,10 @@ export default function PrivacyPage() {
           <h2 className="text-lg font-semibold">7. Contact</h2>
           <p className="mt-2 text-sm text-gray-700">
             For privacy questions or requests, please contact us via the{" "}
-            <Link href="/contact" className="text-gracelife-purple underline underline-offset-4">
+            <Link
+              href="/contact"
+              className="text-gracelife-purple underline underline-offset-4"
+            >
               Contact page
             </Link>
             .

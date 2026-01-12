@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+export const metadata: Metadata = {
+  title: "NDIS Disability Support Services",
+  description:
+    "Person-centred NDIS disability support services delivered at home and in the community by Gracelife Care Services.",
+};
 
 export default function NdisServicesPage() {
   return (
