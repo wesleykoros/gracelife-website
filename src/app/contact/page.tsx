@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContactClient from "./ContactClient";
+import ProgramDisclaimers from "@/components/ProgramDisclaimers";
 
 export const metadata: Metadata = {
   title: "Contact Us | Gracelife Care Services",
@@ -16,8 +17,9 @@ export default function ContactPage() {
           Contact <span className="text-gracelife-purple">Gracelife</span>
         </h1>
         <p className="max-w-2xl text-gray-700">
-          Send an enquiry and our team will respond as soon as possible.  
-          If you’re contacting us about DVA, NDIS, or Aged Care support, select the program below.
+          Send an enquiry and our team will respond as soon as possible. If you’re
+          contacting us about DVA, NDIS, or Aged Care support, select the program
+          below.
         </p>
       </section>
 
@@ -34,35 +36,40 @@ export default function ContactPage() {
               <li className="flex gap-2">
                 <span className="mt-[2px] text-gracelife-teal">•</span>
                 <span>
-                  We review your enquiry and confirm the best pathway (DVA, NDIS, Aged Care, or General).
+                  We review your enquiry and confirm the best pathway (DVA, NDIS,
+                  Aged Care, or General).
                 </span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-[2px] text-gracelife-purple">•</span>
                 <span>
-                  We may ask a few questions to understand preferences, risks, and scheduling needs.
+                  We may ask a few questions to understand preferences, risks,
+                  and scheduling needs.
                 </span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-[2px] text-gracelife-teal">•</span>
-                <span>
-                  We confirm availability and next steps for starting support.
-                </span>
+                <span>We confirm availability and next steps for starting support.</span>
               </li>
             </ul>
           </div>
 
-          <div className="rounded-lg border border-gray-200 p-6">
+          <div className="rounded-lg border border-gray-200 bg-white p-6">
             <h3 className="text-lg font-semibold">Privacy</h3>
             <p className="mt-2 text-sm text-gray-700">
-              Please avoid sharing highly sensitive medical details in the enquiry form.
-              We’ll collect clinical information via appropriate channels if required.
+              Please avoid sharing highly sensitive medical details in the enquiry
+              form. We’ll collect clinical information via appropriate channels if
+              required.
             </p>
           </div>
+
+          {/* ✅ NDIS / DVA DISCLAIMERS */}
+          <ProgramDisclaimers />
         </div>
       </section>
     </div>
   );
 }
+
 
 
