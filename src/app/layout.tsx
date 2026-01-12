@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SchemaOrg from "@/components/SchemaOrg";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -75,6 +76,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-b from-gracelife-teal/10 via-white to-white`}
       >
+        {/* ✅ Schema.org JSON-LD (Global) */}
+        <SchemaOrg
+          baseUrl="https://gracelifecareservices.com.au"
+          name="Gracelife Care Services"
+          description="Gracelife Care Services provides compassionate in-home support and community health care for DVA clients, NDIS participants, and older Australians."
+          logoUrl="https://gracelifecareservices.com.au/brand/logo.jpg"
+          imageUrl="https://gracelifecareservices.com.au/og-image.jpg"
+          email="info@gracelifecareservices.com.au"
+          telephone="+61405564495"
+          serviceAreas={[
+            { name: "New South Wales" },
+            { name: "Greater Sydney and Regional New South Wales" },
+          ]}
+        />
+
         <Header />
 
         <main className="mx-auto max-w-6xl px-4 py-10">
