@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SchemaOrg from "@/components/SchemaOrg";
@@ -33,12 +34,10 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Gracelife Care Services" }],
   metadataBase: new URL("https://gracelifecareservices.com.au"),
-
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
-
   openGraph: {
     title: "Gracelife Care Services",
     description:
@@ -56,7 +55,6 @@ export const metadata: Metadata = {
     locale: "en_AU",
     type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
     title: "Gracelife Care Services",
@@ -68,9 +66,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
       <body
@@ -91,11 +89,16 @@ export default function RootLayout({
           ]}
         />
 
+        {/* ✅ Tidio Chat Widget */}
+        <Script
+          id="tidio-chat"
+          strategy="afterInteractive"
+          src="https://code.tidio.co/ybcq5ua2xjjvjyi2a7ct8csvboqrptjl.js"
+        />
+
         <Header />
 
-        <main className="mx-auto max-w-6xl px-4 py-10">
-          {children}
-        </main>
+        <main className="mx-auto max-w-6xl px-4 py-10">{children}</main>
 
         <Footer />
       </body>
